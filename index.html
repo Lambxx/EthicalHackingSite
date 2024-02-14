@@ -11,6 +11,7 @@
   <body style="background-color: rgb(255, 119, 188);">
    
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
     <nav class="navbar navbar-expand-lg bg-pink" >
     
@@ -202,7 +203,7 @@
             <div class="row align-items-center">
             
               <div class="col">
-                <div class="card text-center">
+                <div class="card text-center" id="codeCard" style="display:block">
                   <div class="card-header">
                     See if you can Use XSS on this website
                   </div>
@@ -216,7 +217,22 @@
                     <a href="#" class="btn btn-primary">Go to the website</a>
                   </div>
                   <div class="card-footer text-body-secondary">
-                    <a href=""> View Soloution </a>
+                    <button onclick="ShowSoloution()">see answer</button>
+                  </div>
+                </div>
+
+
+                <div class="card text-center" id="answerCard" style="display:none;">
+                  <div class="card-header">
+                      Soloution Card
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Soloutin </h5>
+                  
+                  
+                  </div>
+                  <div class="card-footer text-body-secondary">
+                    <button onclick="ShowSoloution()">see code</button>
                   </div>
                 </div>
               </div>
