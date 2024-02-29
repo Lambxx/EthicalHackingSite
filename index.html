@@ -47,42 +47,38 @@
     <div class="container text-center" style="color: black">
       <div class="row">
         
-        <div class="col">
+        <div class="col p-3">
           <h1 >A guide on XSS </h1>
         </div>
-        
+   
       </div>
       <div class="row">
-        <div class="col">
-          <p>Web vunerability is a common problem that many people face. This website will help you understand what web vunerability is and how to prevent it.</p>
-        </div>
-        
-      </div>
-      <div class="row">
-        
-        <div class="col">
-          <h1 >What is XSS  </h1>
-        </div>
-        
-      </div>
-      <div class="row">
-        <div class="col">
-          <p>Web vunerability is a common problem that many people face. This website will help you understand what web vunerability is and how to prevent it Web vunerability is a common problem that many people face. This website will help you understand what web vunerability is and how to prevent it.</p>
-        </div>
+       
         
       </div>
       <div class="row">
         
         <div class="col">
-          <h1 >Why does it matter ?  </h1>
+          <h2 >What is XSS  </h2>
         </div>
         
       </div>
       <div class="row">
         <div class="col">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mattis ullamcorper metus ac fringilla. Pellentesque dolor elit, ultrices quis dolor sit amet, iaculis suscipit eros. Sed laoreet convallis porta. Proin aliquam tellus et tellus feugiat, ut accumsan urna blandit. Sed interdum maximus pellentesque. Maecenas faucibus congue nisi quis viverra. Sed in euismod sem.
-
-            Proin rhoncus lorem sit amet molestie volutpat. Aliquam at nulla purus. Mauris posuere commodo enim, ac fringilla quam vehicula id. Morbi a odio dolor. In ut scelerisque sem. Proin orci augue, ultricies sed nibh sit amet, accumsan mollis orci. Etiam at commodo risus, ut tempor augue.</p>
+          <p>XSS stands for cross-site scripting, a wide category of vulnerabilities focusing on code injection that causes JavaScript to run on a target's web application. It is one of the most prolific vulnerabilities on the web, though in recent years, with increased filtering, simple XSS vulnerabilities have been reduced. However, many more complex vulnerabilities are still out there, and the impact can be critical. It is, therefore, an important vulnerability to be aware of. If you are familiar with SQL injection, you can think of XSS as being somewhat a JavaScript injection.
+            When your browser loads a web page (like this one ), it performs a request to the server hosting the website at the address you have given, and the server responds with the associated resources for this webpage(Check and reference), generally speaking, this will consist of some HTML(The content of the page), Some CSS(The styling for the page) and some JavaScript(This handles dynamic and interactive element) to understand XSS we are interested in HTML and JavaScript. If we can get some JS into the HTML code that the browser processes, then we can run our function on the victim's device. We will look at the different methods for doing this.
+        
+      </div>
+      <div class="row">
+        
+        <div class="col">
+          <h2 >Why does it exist?  </h2>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>Surely this vulnerability should have been put to bed now, given the investment in the modern web? Well, it's not quite that simple, to understand why, we need to understand that the web was built on shaky foundations; no one predicted its evolution at inception, and many arbitrary design decisions were made, particularly in order to appease consumer satisfaction, often at the loss of security. (12) As a result, we have ended up with a model in which browsers non-discriminantly execute any Java script they see regardless of the source; one way around this is to stop them from seeing JS in the first place by stopping any potential payloads from reaching the code of the webpage, however, due to the complexities of parsing, as well as inconstancies in parsing there are many ways round this(reference main textbook.)</p>
         </div>
         
       </div>
@@ -91,43 +87,165 @@
         <div class="row">
           
           <div class="col">
-            <h1 >Full walkthrough  </h1>
+            <h2 >Types of XSS </h2>
           </div>
           
         </div>
         <div class="row">
           <div class="col">
-            <p>Web vunerability is a common problem that many people face. This website will help you understand what web vunerability is and how to prevent it.</p>
-          </div>
-          
-        </div>
-        <div class="row">
-          
-          <div class="col">
-            <h2 >Step1 </h2>
-          </div>
-          
-        </div>
-        <div class="row">
-          <div class="col">
-            <p>Web vunerability is a common problem that many people face. This website will help you understand what web vunerability is and how to prevent it Web vunerability is a common problem that many people face. This website will help you understand what web vunerability is and how to prevent it.</p>
+            <p>There are four main categories of XSS </p>
           </div>
           
         </div>
         <div class="row">
           
           <div class="col">
-            <h2 >Step2  </h2>
+            <h3 >Reflected XSS </h3>
           </div>
           
         </div>
         <div class="row">
           <div class="col">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mattis ullamcorper metus ac fringilla. Pellentesque dolor elit, ultrices quis dolor sit amet, iaculis suscipit eros. Sed laoreet convallis porta. Proin aliquam tellus et tellus feugiat, ut accumsan urna blandit. Sed interdum maximus pellentesque. Maecenas faucibus congue nisi quis viverra. Sed in euismod sem.
-  
-              Proin rhoncus lorem sit amet molestie volutpat. Aliquam at nulla purus. Mauris posuere commodo enim, ac fringilla quam vehicula id. Morbi a odio dolor. In ut scelerisque sem. Proin orci augue, ultricies sed nibh sit amet, accumsan mollis orci. Etiam at commodo risus, ut tempor augue.</p>
+            <p> Reflected XSS uses an HTTP URL and corresponding requests to inject the payload onto the site. Reflected XSS is called such because the payload is injected on the victims, HTTP request and is immediately reflected through the HTTP response onto the page(6). It, therefore, requires a victim to inject the payload on their machine, which is accompanied by malicious links and social engineering, to be effective.</p>
           </div>
           
+        </div>
+        <div class="row">
+          
+          <div class="col">
+            <h3> Stored XSS  </h3>
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col">
+            <p> In contrast, stored  XSS does not require a victim to pollute their own URL, which can make it a more critical vulnerability. Stored XSS relies upon the payload being stored persistently by the web application and sent to victims via a later HTTP request(7). Once the payload arrives on the victim's web browser, the script is executed, allowing the attacker to carry out malicious acts. Suppose I am a user on a social media site, and suppose said media site does not have adequate protection, then some user can comment a payload on the website. Doing so causes the payload to be stored in the server/database and displayed to every user who looks at said comment and executes the payload on their browser.
+              One of my first interactions with cybersecurity was hearing the story of Sammy the Worm in my teens, a famous stored XSS attack that caused chaos on Myspace. You can hear the story from the hacker Samy Kamkar here(https://www.youtube.com/watch?v=DtnuaHl378M).</p>
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col">
+            <p> Reflected XSS uses an HTTP URL and corresponding requests to inject the payload onto the site. Reflected XSS is called such because the payload is injected on the victims, HTTP request and is immediately reflected through the HTTP response onto the page(6). It, therefore, requires a victim to inject the payload on their machine, which is accompanied by malicious links and social engineering, to be effective.</p>
+          </div>
+          
+        </div>
+        <div class="row">
+          
+          <div class="col">
+            <h3> DOM XSS  </h3>
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col">
+            <p> Both reflected and stored XSS rely on the server passing some payload to the browser; in the case of reflected, it is immediately reflected from the URL, while stored, it is fetched from some persistent location. On the other hand, DOM-based XSS does not rely on the payload passing through the server at all(2). Instead, DOM-based XSS makes use of the Javascript document object Model(2). DOM allows programs to dynamically change the content of the web page(3). DOM-based XSS exploits this by passing a malicious payload through what is referred to as the 'source' to a vulnerable function referred to as a 'sink', which allows execution of the payload(4). You can read about common sinks here: https://portswigger.net/web-security/dom-based#:~:text=A%20sink%20is%20a%20potentially,an%20HTML%20sink%20is%20document.</p>
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col">
+            <p> Reflected XSS uses an HTTP URL and corresponding requests to inject the payload onto the site. Reflected XSS is called such because the payload is injected on the victims, HTTP request and is immediately reflected through the HTTP response onto the page(6). It, therefore, requires a victim to inject the payload on their machine, which is accompanied by malicious links and social engineering, to be effective.</p>
+          </div>
+          
+        </div>
+        <div class="row">
+          
+          <div class="col">
+            <h3> Blind XSS  </h3>
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>With a blind XSS attack, you are attempting to attack a target not immediately visible to you and firing in the dark, so to speak. This vulnerability focuses on submitting an XSS payload, hoping it will trigger on some invisible system, such as an admin page. For example, I could make my email an XSS payload in the hopes it is processed somewhere else where it will execute; we can use tools to find out if the payload does execute and where.  </p>
+          </div>
+          
+        </div>
+        <div class="row">
+          
+          <div class="col p-3">
+            <h2> Impact of XSS</h2>
+          </div>
+          
+        </div>
+        <div class="row">
+          
+          <div class="col">
+            <h3> Stealing cookies   </h3>
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Cookies are a popular way to maintain sessions and authenticate user requests (ref 1. ). XSS can be used as a technique to steal these cookies. Once we have stolen the cookies, we can inject them back into the browser and impersonate the victim. (5)The impact of impersonation depends on the application, but this could be writing defamatory posts from a social account or reading sensitive data.</p>
+          </div>
+          
+        </div>
+        <div class="row">
+          
+          <div class="col">
+            <h3>Password autofill</h3>
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>XSS can exploit users with auto-fill password managers by allowing the password manager to populate some password field, which then sends the user password to the attacker(5).</p>
+          </div>
+          
+        </div>
+        <div class="row">
+          
+          <div class="col">
+            <h3>CSRF</h3>
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>CSRF is a separate vulnerability from XSS; CSRF makes use of a user being logged in somewhere else to perform actions on behalf of their account. CSRF is protected against using a CSRF token. However, XSS can be used to bypass this.(5) Hence, an XSS vulnerability opens the door to another vulnerability.</p>
+          </div>
+          
+        </div>
+        <div class="row">
+          
+          <div class="col p-3">
+            <h2> Causes of XSS and how we can prevent it </h2>
+          </div>
+          
+        </div>
+        <div class="row">
+          
+          <div class="col">
+            <h3> Improper input validation    </h3>
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Not validating inputs can leave room for XSS vulnerabilities; for example, an input expecting an age should not allow a string; by stopping this, we prevent potential payloads from ever being processed. Ideally, these inputs should be blocked from ever being submitted. (ref 8)</p>
+          </div>
+          
+        </div>
+        <div class="row">
+          
+          <div class="col">
+            <h3>Not encoding, sanitising and escaping unsafe characters</h3>
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>An unsafe character is one that may be processed in some unintended way such as, such as a URL or a code segment; examples include ""<",".>" {","}", "|", "\", "^", "~",
+              "[","]", and" `"." (9). Unsafe characters should be sanitised, encoded or escaped. 
+           Sanitisation involves removing unsafe characters entirely, often by either allowing characters that match a whitelist or disallowing characters that match a blacklist. (10).
+           Escaping involves transforming the input so it is no longer unsafe, for example, adding \before a "so that it is not read as closing a string but just as text (11).
+           Encoding involves transforming the characters to an equivalent encoded character that is not processed unsafely by the web application; for example, < is encoded as &lt; This is also used when displaying html code on a page as a code snippet so it is not read as HTML, the example html given in the demonstrations is encoded in this way.</p>
+          </div>
+          
+        </div>
+       
         </div>
       
         </div>
