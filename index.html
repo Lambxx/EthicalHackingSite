@@ -255,7 +255,7 @@
               <div class="text-center">
                 <img src="assets\download.jpg" class="rounded" alt="...">
               </div>
-          </div>
+            </div>
         </div>
         </div>
         <div class="container text-center" style="color: black">
@@ -310,13 +310,65 @@
             <div class="col">
               <p>First we navigate to the main page of the website </p>
             </div>
-          
+            <div class="container-fluid ">
+              <div class = "row p-3">
+                <div class="col">
+                  <div class="text-center">
+                    <img src="assets\ReflectedXSSexample\RS1.png" class="rounded" alt="...">
+                  </div>
+                </div>
+            </div>
+            </div>
+            <div class="col">
+              <p>Here we can see one input feild so we can inspect this further by entering an input. </p>
+            </div>
         </div>
+        <div class="row">
+          <div class="container-fluid ">
+            <div class = "row p-3">
+              <div class="col">
+                <div class="text-center">
+                  <img src="assets\ReflectedXSSexample\RS2.png" class="rounded" alt="...">
+                </div>
+              </div>
+          </div>
+          </div>
+          <div class="col">
+            <p>Leading us to this page where we can see our search has been reflected onto the site.</p>
+          </div>
+      </div>
+      <div class="row">
+        <div class="container-fluid ">
+          <div class = "row p-3">
+            <div class="col">
+              <div class="text-center">
+                <img src="assets\ReflectedXSSexample\RS3.png" class="rounded" alt="...">
+              </div>
+            </div>
+        </div>
+        </div>
+        <div class="col">
+          <p>On closer inspection we can also see it has been placed in the URL as a paramter so we can test injecting a payload here.</p>
+        </div>
+        <div class="row">
+          <div class="container-fluid ">
+            <div class = "row p-3">
+              <div class="col">
+                <div class="text-center">
+                  <img src="assets\ReflectedXSSexample\RS4.png" class="rounded" alt="...">
+                </div>
+              </div>
+          </div>
+          </div>
+          <div class="col">
+            <p>When we do this we succesfully execute the JavaScript payload on the site.</p>
+          </div>
+    </div>
           <div class="container text-center">
             <div class="row">
             
               <div class="col p-3">
-                <h2 >Practice Exersize  </h2>
+                <h2 >Practice Exersize IS THIS DOM ?  </h2>
               </div>
       
               </div>
@@ -332,16 +384,7 @@
                     See if you can Use XSS on this website(Tested on Chrome only)
                   </div>
                   <div class="card-body">
-                    <h5 class="card-title">Website code</h5>
-                   
-                      <div class="container text-center">
-                        <p>  &lt;h1>Welcome &lt;/h1&gt;</p>
-                   <p>   &lt;h1 id="Username"&gt;Hello User&lt;/h1&gt;</p>
-                <p>      &lt;script&gt;</p>
-                 <p>       Username.innerHTML = (new URL(location).searchParams.get('Username')) </p>
-                 <p>     &lt;/script&gt;</p>
-                      
-                      </div>
+                 
               
                     <a href="https://lambxx.github.io/vunerableSite/?Username=User" class="btn btn-primary" target="_blank">Go to the website</a>
                   </div>
@@ -365,6 +408,7 @@
                     <button onclick="ShowSoloution()">see code</button>
                   </div>
                 </div>
+                <p>Note as this </p>
               </div>
              
             </div>
