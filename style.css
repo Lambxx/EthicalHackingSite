@@ -1,7 +1,15 @@
 #pink {
     color: pink;
 }
-
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+/* 
+    Refernce for image styling 
+    https://stackoverflow.com/questions/29641526/how-can-images-be-resized-using-bootstrap
+*/
 #ff0081	(255,0,129)
 #ff48a5	(255,72,165)
 #ff77bc	(255,119,188)
