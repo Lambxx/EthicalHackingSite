@@ -125,13 +125,19 @@
         </div>
         <div class="row">
           <div class="col">
+            <div class="text-center">
+              <img id="reduce" src="assets\StoredXSS/StoredXSS image.png" class="rounded" alt="...">
+            </div>
+          </div>
+          <div class="col ">
             <p> In contrast, stored  XSS does not require a victim to pollute their own URL, which can make it a more critical vulnerability. Stored XSS relies upon the payload being stored persistently by the web application and sent to victims via a later HTTP request(7). Once the payload arrives on the victim's web browser, the script is executed, allowing the attacker to carry out malicious acts. Suppose I am a user on a social media site, and suppose said media site does not have adequate protection, then some user can comment a payload on the website. Doing so causes the payload to be stored in the server/database and displayed to every user who looks at said comment and executes the payload on their browser.
              
              </p>
              </div>
+             
              </div>
        
-          <div class="container">
+          <div class="container p-3">
             <div class="row">
               <div class="col">
                 <p> One of my first interactions with cybersecurity was hearing the story of Sammy the Worm in my teens, a famous stored XSS attack that caused chaos on Myspace. You can hear the story from the hacker Samy Kamkar here(https://www.youtube.com/watch?v=DtnuaHl378M).</p>
@@ -144,11 +150,7 @@
           
           <div class="container-fluid ">
             <div class = "row p-3">
-              <div class="col">
-                <div class="text-center">
-                  <img id="reduce" src="assets\StoredXSS/StoredXSS image.png" class="rounded" alt="...">
-                </div>
-              </div>
+             
           </div>
           </div>
         </div>
@@ -198,10 +200,15 @@
           
         </div>
         <div class="row">
-          
           <div class="col">
-            <h3> Stealing cookies   </h3>
+            
+            </div>
+          <div class="col">
+            <h3> Stealing cookies   </h3> 
           </div>
+          <div class="col">
+            <img id="cookie"src="assets\cookie.png" class="rounded" alt="...">
+            </div>
           
         </div>
         <div class="row">
@@ -364,7 +371,7 @@
           <div class="col">
             <p>Leading us to this page where we can see our search has been reflected onto the site.</p>
           </div>
-      </div>
+      
       <div class="row">
         <div class="container-fluid ">
           <div class = "row p-3">
@@ -377,6 +384,7 @@
         </div>
         <div class="col">
           <p>On closer inspection we can also see it has been placed in the URL as a paramter so we can test injecting a payload here.</p>
+        </div>
         </div>
         <div class="row">
           <div class="container-fluid ">
@@ -396,7 +404,7 @@
             <div class="row">
             
               <div class="col p-3">
-                <h2 >Practice Exersize IS THIS DOM ?  </h2>
+                <h2 >Practice Excersize  </h2>
               </div>
       
               </div>
@@ -436,17 +444,21 @@
                     <button onclick="ShowSoloution()">see code</button>
                   </div>
                 </div>
-                <p>Note as this </p>
+                <p style="font-style: italic;">*Note due to the lack of server hosting, this is really DOM XSS in disguise but for practice purposes it works as reflected would. </p>
               </div>
              
             </div>
           </div>
-          <div class="col">
-            <h2 >DOMXSS not finished <!DOCTYPE html> </h2>
           </div>
-          
-        </div>
-     
+        
+     <div class="container text-center">
+      <div class="row">
+      <div class="col">
+        <h2 >DOMXSS </h2>
+      </div>
+      </div>
+      
+    
         <div class="row">
           
           <div class="col p-3">
@@ -456,8 +468,7 @@
         </div>
         <div class="row">
           <div class="col">
-            <p>Let's say a HTML web page uses a get request to get a value from the URL, for example, http://example.com/?User=Username 
-              We can replace this username value with some javascript such as <script> alert(1)</script> http://example.com/?User=<script> alert(1)</script>, and the web browser will read this as it would the rest of the HTML and run the javascript function. There is a simple example below. (13)</p>
+            <p>Our goal with DOM XSS is to place a payload somewhere, in which a JS function on the target website, will take the text and with the DOM model, insert our payload onto the website where it will be proccessed.</p>
           </div>
           <div class="row">
           
@@ -468,7 +479,7 @@
           </div>
           <div class="row">
             <div class="col">
-              <p>This example walkthrough is from https://portswigger.net/web-security/cross-site-scripting/reflected/lab-html-context-nothing-encoded</p>
+              <p>This example walkthrough is from <a href="https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-document-write-sink"> Portswigger</a></p>
             </div>
           
         </div>
@@ -487,9 +498,12 @@
           </div>
           </div>
           <div class="col">
-            <p>Here we can see one input feild so we can inspect this further by entering an input. </p>
+            <p>We can test the search input as before, this time we can inspect the element that displays our text 'test'</p>
           </div>
       </div>
+      </div>
+      </div>
+      <div class ="container text-center">
       <div class="row">
         <div class="container-fluid ">
           <div class = "row p-3">
@@ -501,36 +515,59 @@
         </div>
         </div>
         <div class="col">
-          <p>Leading us to this page where we can see our search has been reflected onto the site.</p>
-        </div>
+          <p>On closer Inspection we see that 'test' has been placed as an image element</p>
     </div>
+    </div>
+    </div>
+    <div class="container text-center ">
     <div class="row">
-      <div class="container-fluid ">
+      
         <div class = "row p-3">
           <div class="col">
             <div class="text-center">
-              <img src="assets\DOMXSS\SXE3.png" class="rounded" alt="...">
+              <img src="assets\DOMXSS\SXE2_1.png" class="rounded" alt="...">
             </div>
           </div>
       </div>
       </div>
-      <div class="col">
-        <p>On closer inspection we can also see it has been placed in the URL as a paramter so we can test injecting a payload here.</p>
+   
+        <div class="container text-center "></div>
+  
+          
+            <div class = "row p-3">
+              <div class="col">
+          
+        <p>Then we can try injecting a payload into the search field, this payload closes the image tag and places a new element on the page, containg the payload by referencing a function.</p>
       </div>
-      <div class="row">
-        <div class="container-fluid ">
+      </div>
+</div>
+      
+        <div class="container text-center ">
           <div class = "row p-3">
             <div class="col">
-              <div class="text-center">
-                <img src="assets\DOMXSS\SXE4.png" class="rounded" alt="...">
-              </div>
+             
+                <img src="assets\DOMXSS\SXE3.png" class="rounded" alt="...">
+            
             </div>
         </div>
+        </div>
+        <div class="container text-center ">
+          <div class = "row p-3">
+            <div class="col">
+             
+                <img src="assets\DOMXSS\SXE4.png" class="rounded" alt="...">
+            
+            </div>
+        </div>
+        
         </div>
         <div class="col">
           <p>When we do this we succesfully execute the JavaScript payload on the site.</p>
         </div>
   </div>
+  </div>
+  </div>
+ 
         <div class="container text-center">
           <div class="row">
           
@@ -542,7 +579,7 @@
         
           <!-- Copyright -->
           <div class="text-center p-3" >
-            © 2024 Copyright:
+            ©2024 Copyright:
             <a class="text-body p-3" href="https://lambxx.github.io/">Luna Lamb</a>
             <a href="https://www.linkedin.com/in/luna-lambx" style="--bs-link-hover-color-rgb: 135, 31, 120; ;" >
             <i class="bi bi-linkedin"></i>
@@ -551,7 +588,7 @@
               <i class="bi bi-github"></i>
               </a>
               
-           <!--Add in link to credit websites used  -->
+         
         
           <!-- Copyright -->
         </footer>
