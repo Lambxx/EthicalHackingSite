@@ -284,29 +284,10 @@
         </div>
       
         </div>
-        <div class="container-fluid ">
-          <div class = "row p-3">
-            <div class="col">
-              <div class="text-center">
-                <img src="assets\download.jpg" class="rounded" alt="...">
-              </div>
-            </div>
-        </div>
-        </div>
+      
         <div class="container text-center" style="color: black">
-          <div class="row">
-            
-            <div class="col">
-              <h1 >Have a go yourself   </h1>
-            </div>
-            
-          </div>
-          <div class="row">
-            <div class="col">
-              <p>Web vunerability is a common problem that many people face. This website will help you understand what web vunerability is and how to prevent it.</p>
-            </div>
-            
-          </div>
+       
+    
           <div class="row">
             
             <div class="col">
@@ -315,13 +296,7 @@
             
           </div>
        
-          <div class="row">
-            
-            <div class="col p-3">
-              <h2 >Explanation  </h2>
-            </div>
-            
-          </div>
+       
           <div class="row">
             <div class="col">
               <p>Let's say a HTML web page uses a get request to get a value from the URL, for example, http://example.com/?User=Username 
@@ -336,7 +311,7 @@
             </div>
             <div class="row">
               <div class="col">
-                <p>This example walkthrough is from https://portswigger.net/web-security/cross-site-scripting/reflected/lab-html-context-nothing-encoded</p>
+                <p>This lab which is demonstrated is from <a href="https://portswigger.net/web-security/cross-site-scripting/reflected/lab-html-context-nothing-encoded">PortSwigger</a> </p>
               </div>
             
           </div>
@@ -397,20 +372,20 @@
           </div>
           </div>
           <div class="col">
-            <p>When we do this we succesfully execute the JavaScript payload on the site.</p>
+            <p>When we do this we successfully execute the JavaScript payload on the site.</p>
           </div>
     </div>
           <div class="container text-center">
             <div class="row">
             
               <div class="col p-3">
-                <h2 >Practice Excersize  </h2>
+                <h2 >Practice Exercise  </h2>
               </div>
       
               </div>
               <div class="row">
                 <div class="col">
-                  <p>Here is a practice exersize so you can test your knowledge of reflected xss. The goal is to execute a payload on the site, for example an alert function, you can find a list of common payloads here, ADD PAYLOAD LIST </p>
+                  <p>Here is a practice exercise so you can test your knowledge of reflected xss. The goal is to execute a payload on the site, for example an alert function, you can find a list of common payloads here, ADD PAYLOAD LIST </p>
                 </div>
             <div class="row align-items-center">
             
@@ -459,13 +434,7 @@
       </div>
       
     
-        <div class="row">
-          
-          <div class="col p-3">
-            <h2 >Explanation  </h2>
-          </div>
-          
-        </div>
+      
         <div class="row">
           <div class="col">
             <p>Our goal with DOM XSS is to place a payload somewhere, in which a JS function on the target website, will take the text and with the DOM model, insert our payload onto the website where it will be proccessed.</p>
@@ -479,7 +448,7 @@
           </div>
           <div class="row">
             <div class="col">
-              <p>This example walkthrough is from <a href="https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-document-write-sink"> Portswigger</a></p>
+              <p>This lab which is demonstrated is from <a href="https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-document-write-sink"> Portswigger</a></p>
             </div>
           
         </div>
@@ -566,7 +535,94 @@
         </div>
   </div>
   </div>
+  <div class="container text-center">
+    <div class ="row">
+      <div class="col">
+        <h2>Stored XSS example</h2>
+        <p>This lab which is demonstrated is from <a href="https://portswigger.net/web-security/cross-site-scripting/stored/lab-html-context-nothing-encoded"> Portswigger</a></p>
+          
+        </div>
+      </div>
+
+      <div class ="row">
+        <div class="col">
+          <p>First we navigate to the main page of the website </p>
+         
+          </div>
+        </div>
+        <div class ="row">
+          <div class="col">
+            <img class="rounded" src="assets\StoredXSS\SXX1.png">
+            </div>
+          </div>
+          <div class ="row p-3">
+            <div class="col">
+             <p> Exploring further we can find a blog post. </p>
+              </div>
+            </div>
+            <div class ="row">
+              <div class="col">
+                <img class="rounded" src="assets\StoredXSS\SXX2.png">
+                </div>
+              </div>
+              <div class ="row p-3">
+                <div class="col">
+                 <p> We are looking for anywhere we can potentially enter a payload, scrolling down brings us to the comment section. </p>
+                  </div>
+                </div>
+                <div class ="row">
+                  <div class="col">
+                    <img class="rounded" src="assets\StoredXSS\SXX3.png">
+                    </div>
+                  </div>
+                  <div class ="row p-3">
+                    <div class="col">
+                     <p> This seems a good potential location to inject a payload. </p>
+                      </div>
+                    </div>
+                    <div class ="row">
+                      <div class="col">
+                        <img class="rounded" src="assets\StoredXSS\SXX4.png">
+                        </div>
+                      </div>
+                      <div class ="row p-3">
+                        <div class="col">
+                         <p> We will attempt to inject a basic payload, between script tags, which if successful will show an alert of 1, to anyone who views the comment. We fill out the rest of the form with valid values so it is accepted. Were this to be unsuccessful we could try placing the payload in other felids, such as name. </p>
+                          </div>
+                        </div>
+                        <div class ="row">
+                          <div class="col">
+                            <img class="rounded" src="assets\StoredXSS\SXX5.png">
+                            </div>
+                          </div>
+                          <div class ="row p-3">
+                            <div class="col">
+                             <p> It is however successful and after submitting the comment we are returned to the blog, where the payload is executed on our browser, this would now be the case for anyone who views the blog post. </p>
+                              </div>
+                            </div>
+                            <div class ="row">
+                              <div class="col">
+                                <img class="rounded" src="assets\StoredXSS\SXX6.png">
+                                </div>
+                              </div>
+                              <div class ="row p-3">
+                                <div class="col">
+                                 <p>Once we close the alert, we can see the blog post and comments, looking at the comments we can see our comment there. It does not show the payload as it has been processed as code and not text to be displayed.</p>
+                                  </div>
+                                </div>
+                                <div class ="row">
+                                  <div class="col">
+                                    <img class="rounded" src="assets\StoredXSS\SXX7.png">
+                                    </div>
+                                  </div>
+                                  <div class ="row p-3">
+                                    <div class="col">
+                                     <p>However inspecting the code for the webpage, allows us to see our script has been placed between the p tags, where the comment should have gone.</p>
+                                      </div>
+                                    </div>
+    </div>
   </div>
+
  
         <div class="container text-center">
           <div class="row">
