@@ -87,7 +87,7 @@
         </div>
         <div class="row">
           
-          <div class="col">
+          <div class="col p-3">
             <h3 >Reflected XSS </h3>
           </div>
           
@@ -96,47 +96,40 @@
           <div class="col">
             <p> Reflected XSS uses an HTTP URL (the website address) and corresponding request, which is sent when you request that URL, to inject the payload onto the site. Reflected XSS is called such because the payload is injected on the victim's URL, sent through an HTTP request and immediately reflected through the HTTP response onto the page<a href="references.html">[2]</a>. It, therefore, requires a victim to inject the payload on their machine, which means reflected XSS usually requires malicious links and social engineering to be effective. For example, a hacker could send a malicious link through a phishing email. When the user clicks the link, the payload that was placed in the URL runs on the site the hacker specified in the link.</p>
           </div>
-          <div class="col p-3">
+          <div class="col">
             <div class="text-center">
               <img id="reduce" src="assets\ReflectedXSSexample\Reflected Image.png" class="rounded" alt="...">
             </div>
           </div>
           
+          
         </div>
      
         <div class="row">
           
-          <div class="col">
+          <div class="col p-3">
             <h3> Stored XSS  </h3>
           </div>
           
         </div>
         <div class="row">
-          <div class="col">
-            <div class="text-center">
-              <img id="reduce" src="assets\StoredXSS/StoredXSS image.png" class="rounded" alt="...">
+          <div class="col float-right">
+    
+              <img id="reduceLess" src="assets\StoredXSS/StoredXSS image.png" class="rounded" alt="...">
             </div>
-          </div>
+        
           <div class="col ">
             <p>In contrast, stored XSS does not require a victim to pollute their URL, which can make it a more critical vulnerability. Stored XSS relies upon the payload being stored persistently by the web application and sent to victims via a later HTTP request<a href="references.html">[3]</a>. The script is executed once the payload arrives on the victim's web browser. Suppose a user is on a social media site, and suppose said media site does not have adequate protection, then some user can comment a payload on the website. Doing so causes the payload to be stored in the server/database and displayed to every user who looks at said comment and executes the payload on their browser.
-             
-              
-             
              </p>
              </div>
-             
+             <div class="col">
+              <p> One of my first interactions with cybersecurity was hearing the story of Sammy the Worm in my teens, a famous stored XSS attack that caused chaos on Myspace. You can hear the story from the hacker Samy Kamkar <a href="https://www.youtube.com/watch?v=DtnuaHl378M">here</a>.</p>
+              <img  src="assets\worm.png" class="rounded" alt="Worm">
+            </div>
+          
              </div>
        
-          <div class="container p-3">
-            <div class="row">
-              <div class="col">
-                <p> One of my first interactions with cybersecurity was hearing the story of Sammy the Worm in my teens, a famous stored XSS attack that caused chaos on Myspace. You can hear the story from the hacker Samy Kamkar <a href="https://www.youtube.com/watch?v=DtnuaHl378M">here</a>.</p>
-              </div>
-              <div class="col">
-                <img  src="assets\worm.png" class="rounded" alt="Worm">
-              </div>
-              </div>
-            </div>
+    
           
           <div class="container-fluid ">
             <div class = "row p-3">

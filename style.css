@@ -16,6 +16,19 @@ img {
     max-width: 50%;
     height: auto;
   }
+
+  #reduceLess{
+    display: block;
+    max-width: 75%;
+    height: auto;
+  }
+  a {
+    color: rgb(174, 7, 91);
+    
+  }
+  a:hover {
+    color: rgb(195, 132, 191);
+  }
   
  
 /* 
