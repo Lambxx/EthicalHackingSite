@@ -11,6 +11,11 @@ img {
     max-width: 20%;
     height: auto;
   }
+  #reduce{
+    display: block;
+    max-width: 50%;
+    height: auto;
+  }
   
  
 /* 

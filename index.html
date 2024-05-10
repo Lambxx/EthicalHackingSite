@@ -94,7 +94,7 @@
         </div>
         <div class="row">
           <div class="col">
-            <p> Reflected XSS uses an HTTP URL (the website address) and corresponding request, which is sent when you request that URL, to inject the payload onto the site. Reflected XSS is called such because the payload is injected on the victim's URL, sent through an HTTP request and immediately reflected through the HTTP response onto the page<a href="/references.html">[2]</a>. It, therefore, requires a victim to inject the payload on their machine, which means reflected XSS usually requires malicious links and social engineering to be effective. For example, a hacker could send a malicious link through a phishing email. When the user clicks the link, the payload that was placed in the URL runs on the site the hacker specified in the link.</p>
+            <p> Reflected XSS uses an HTTP URL (the website address) and corresponding request, which is sent when you request that URL, to inject the payload onto the site. Reflected XSS is called such because the payload is injected on the victim's URL, sent through an HTTP request and immediately reflected through the HTTP response onto the page<a href="references.html">[2]</a>. It, therefore, requires a victim to inject the payload on their machine, which means reflected XSS usually requires malicious links and social engineering to be effective. For example, a hacker could send a malicious link through a phishing email. When the user clicks the link, the payload that was placed in the URL runs on the site the hacker specified in the link.</p>
           </div>
           <div class="col p-3">
             <div class="text-center">
@@ -118,7 +118,7 @@
             </div>
           </div>
           <div class="col ">
-            <p>In contrast, stored XSS does not require a victim to pollute their URL, which can make it a more critical vulnerability. Stored XSS relies upon the payload being stored persistently by the web application and sent to victims via a later HTTP request<a href="/references.html">[3]</a>. The script is executed once the payload arrives on the victim's web browser. Suppose a user is on a social media site, and suppose said media site does not have adequate protection, then some user can comment a payload on the website. Doing so causes the payload to be stored in the server/database and displayed to every user who looks at said comment and executes the payload on their browser.
+            <p>In contrast, stored XSS does not require a victim to pollute their URL, which can make it a more critical vulnerability. Stored XSS relies upon the payload being stored persistently by the web application and sent to victims via a later HTTP request<a href="references.html">[3]</a>. The script is executed once the payload arrives on the victim's web browser. Suppose a user is on a social media site, and suppose said media site does not have adequate protection, then some user can comment a payload on the website. Doing so causes the payload to be stored in the server/database and displayed to every user who looks at said comment and executes the payload on their browser.
              
               
              
@@ -154,7 +154,7 @@
         <div class="row">
           <div class="col">
             <p> 
-              Both reflected and stored XSS rely on the server passing some payload to the browser; in the case of reflected, it is immediately reflected from the URL, while stored, it is fetched from some persistent location. On the other hand, DOM-based XSS does not rely on the payload passing through the server at all<a href="/references.html">[4]</a>. Instead, DOM-based XSS uses the Javascript document object Model<a href="/references.html">[4]</a>. DOM allows programs to dynamically change the web page's content <a href="/references.html">[5]</a>. DOM-based XSS exploits this by passing a malicious payload through what is referred to as the 'source' to a vulnerable function called a 'sink', which allows execution of the payload(4). You can read about common sinks <a href="https://portswigger.net/web-security/dom-based#:~:text=A%20sink%20is%20a%20potentially,an%20HTML%20sink%20is%20document">here</a>.To give an example, imagine a website, which displays the value you have searched for at the top of the page when you press a button. This search input would be the source; the function that takes the input and displays it without the proper precautions( this is expanded on below) is the sink, and the payload will then execute on the browser.
+              Both reflected and stored XSS rely on the server passing some payload to the browser; in the case of reflected, it is immediately reflected from the URL, while stored, it is fetched from some persistent location. On the other hand, DOM-based XSS does not rely on the payload passing through the server at all<a href="references.html">[4]</a>. Instead, DOM-based XSS uses the Javascript document object Model<a href="references.html">[4]</a>. DOM allows programs to dynamically change the web page's content <a href="references.html">[5]</a>. DOM-based XSS exploits this by passing a malicious payload through what is referred to as the 'source' to a vulnerable function called a 'sink', which allows execution of the payload(4). You can read about common sinks <a href="https://portswigger.net/web-security/dom-based#:~:text=A%20sink%20is%20a%20potentially,an%20HTML%20sink%20is%20document">here</a>.To give an example, imagine a website, which displays the value you have searched for at the top of the page when you press a button. This search input would be the source; the function that takes the input and displays it without the proper precautions( this is expanded on below) is the sink, and the payload will then execute on the browser.
             </p>
           </div>
           
@@ -196,7 +196,7 @@
         </div>
         <div class="row">
           <div class="col">
-            <p>Cookies are a popular way to maintain sessions and authenticate user requests <a href="/references.html">[6]</a>. XSS can be used as a technique to steal these cookies. Once the cookies are stolen, they can be injected back into the browser and impersonate the victim. <a href="/references.html">[7]</a>The impact of impersonation depends on the application, but this could be writing defamatory posts from a social account or reading sensitive data.</p>
+            <p>Cookies are a popular way to maintain sessions and authenticate user requests <a href="references.html">[6]</a>. XSS can be used as a technique to steal these cookies. Once the cookies are stolen, they can be injected back into the browser and impersonate the victim. <a href="references.html">[7]</a>The impact of impersonation depends on the application, but this could be writing defamatory posts from a social account or reading sensitive data.</p>
           </div>
           
         </div>
@@ -209,7 +209,7 @@
         </div>
         <div class="row">
           <div class="col">
-            <p>XSS can exploit users with auto-fill password managers by allowing the password manager to populate some password field, which then sends the user password to the attacker<a href="/references.html">[7]</a>.</p>
+            <p>XSS can exploit users with auto-fill password managers by allowing the password manager to populate some password field, which then sends the user password to the attacker<a href="references.html">[7]</a>.</p>
           </div>
           
         </div>
@@ -222,7 +222,7 @@
         </div>
         <div class="row">
           <div class="col">
-            <p>Whilst the above two impacts used to be an issue with increased prevention measures recently, this is not so much the case. Whilst these vulnerabilities have reduced, more complex layered issues still exist; CSRF is an example of this. CSRF is a separate vulnerability from XSS; CSRF uses a user being logged in somewhere else to perform actions on behalf of their account. CSRF is protected against using a CSRF token. However, XSS can bypass this. <a href="/references.html">[7]</a> an XSS vulnerability opens the door to another vulnerability.
+            <p>Whilst the above two impacts used to be an issue with increased prevention measures recently, this is not so much the case. Whilst these vulnerabilities have reduced, more complex layered issues still exist; CSRF is an example of this. CSRF is a separate vulnerability from XSS; CSRF uses a user being logged in somewhere else to perform actions on behalf of their account. CSRF is protected against using a CSRF token. However, XSS can bypass this. <a href="references.html">[7]</a> an XSS vulnerability opens the door to another vulnerability.
             </p>
           </div>
           
@@ -244,7 +244,7 @@
         </div>
         <div class="row">
           <div class="col">
-            <p>Not validating inputs can leave room for XSS vulnerabilities; for example, an input expecting an age should not allow a string; by stopping this, we prevent potential payloads from ever being processed. Ideally, these inputs should be blocked from ever being submitted<a href="/references.html">[8]</a> .</p>
+            <p>Not validating inputs can leave room for XSS vulnerabilities; for example, an input expecting an age should not allow a string; by stopping this, we prevent potential payloads from ever being processed. Ideally, these inputs should be blocked from ever being submitted<a href="references.html">[8]</a> .</p>
           </div>
           
         </div>
@@ -258,9 +258,9 @@
         <div class="row">
           <div class="col">
             <p>An unsafe character may be processed in some unintended way, such as a URL or a code segment; examples include ""<",".>" {","}", "|", "\", "^", "~",
-              "[","]", and" `"." <a href="/references.html">[9]</a> . Unsafe characters should be sanitised, encoded or escaped. 
-           Sanitisation involves removing unsafe characters entirely, often by allowing characters that match a safelist or disallowing characters that match a denylist. <a href="/references.html">[10]</a> .
-           Escaping involves transforming the input so it is no longer unsafe, for example, adding \ before a " so that it is not read as closing a string but just as text <a href="/references.html">[11]</a>.
+              "[","]", and" `"." <a href="references.html">[9]</a> . Unsafe characters should be sanitised, encoded or escaped. 
+           Sanitisation involves removing unsafe characters entirely, often by allowing characters that match a safelist or disallowing characters that match a denylist. <a href="references.html">[10]</a> .
+           Escaping involves transforming the input so it is no longer unsafe, for example, adding \ before a " so that it is not read as closing a string but just as text <a href="references.html">[11]</a>.
            Encoding involves transforming the characters to an equivalent encoded character that is not processed unsafely by the web application; for example, < is encoded as &lt; This is also used when displaying HTML code on a page as a code snippet, so it is not read as HTML, the example html given in the demonstrations is encoded in this way</p>
           </div>
           
@@ -285,7 +285,7 @@
           <div class="row">
             <div class="col">
               <p>Let's say a HTML web page uses a get request to get a value from the URL, for example, http://example.com/?User=Username 
-                We can replace this username value with some javascript such as &lt;script&gt; alert(1)&lt;/script&gt; http://example.com/?User=&lt;script&gt; alert(1)&lt;/script&gt;, and the web browser will read this as it would the rest of the HTML and run the javascript function. There is a simple example below.<a href="/references.html">[12]</a></p>
+                We can replace this username value with some javascript such as &lt;script&gt; alert(1)&lt;/script&gt; http://example.com/?User=&lt;script&gt; alert(1)&lt;/script&gt;, and the web browser will read this as it would the rest of the HTML and run the javascript function. There is a simple example below.<a href="references.html">[12]</a></p>
             </div>
             <div class="row">
             
