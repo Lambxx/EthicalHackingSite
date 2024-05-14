@@ -66,7 +66,7 @@
       <div class="row">
         <div class="col">
           <p>XSS stands for cross-site scripting, a broad category of vulnerabilities focusing on code injection that causes code to run on a target's web application. It is one of the most prolific vulnerabilities on the web, though in recent years, with increased filtering, simple XSS vulnerabilities have been reduced. However, many more complex vulnerabilities are still out there, and the impact can be critical. 
-            When your browser loads a web page (like this one ), it performs a request to the server hosting the website at the address you have given, and the server responds with the associated resources for this webpage <a href="references.html">[1]</a>. Generally speaking, this will consist of some HTML (The content of the page), some CSS (The styling for the page), and some JavaScript (This handles dynamic and interactive elements); these are done by your browser locally. XSS aims to inject some code the browser processes (the payload) with the rest of the code and run this on the victim's web browser.
+            When your browser loads a web page (like this one ), it performs a request to the server hosting the website at the address you have given, and the server responds with the associated resources for this webpage <a href="references.html">[1]</a>. Generally speaking, this will consist of some HTML (The content of the page), some CSS (The styling for the page), and some JavaScript (This handles dynamic and interactive elements); these are processed by your browser locally. XSS aims to inject some code the browser processes (the payload) with the rest of the code and run this on the victim's web browser.
         </p>
       </div>
      
@@ -94,7 +94,7 @@
         </div>
         <div class="row">
           <div class="col-sm">
-            <p> Reflected XSS uses an HTTP URL (the website address) and corresponding request, which is sent when you request that URL, to inject the payload onto the site. Reflected XSS is called such because the payload is injected on the victim's URL, sent through an HTTP request and immediately reflected through the HTTP response onto the page<a href="references.html">[2]</a>. It, therefore, requires a victim to inject the payload on their machine, which means reflected XSS usually requires malicious links and social engineering to be effective. For example, a hacker could send a malicious link through a phishing email. When the user clicks the link, the payload that was placed in the URL runs on the site the hacker specified in the link.</p>
+            <p> Reflected XSS uses a HTTP URL (the website address) and corresponding request, which is sent when you request that URL, to inject the payload onto the site. Reflected XSS is called such because the payload is injected on the victim's URL, sent through an HTTP request and immediately reflected through the HTTP response onto the page<a href="references.html">[2]</a>. It, therefore, requires a victim to inject the payload on their machine, which means reflected XSS usually requires malicious links and social engineering to be effective. For example, a hacker could send a malicious link through a phishing email. When the user clicks the link, the payload that was placed in the URL runs on the site the hacker specified in the link.</p>
           </div>
           <div class="col-sm">
             <div class="text-center">
@@ -147,7 +147,7 @@
         <div class="row">
           <div class="col">
             <p> 
-              Both reflected and stored XSS rely on the server passing some payload to the browser; in the case of reflected, it is immediately reflected from the URL, while stored, it is fetched from some persistent location. On the other hand, DOM-based XSS does not rely on the payload passing through the server at all<a href="references.html">[4]</a>. Instead, DOM-based XSS uses the Javascript document object Model<a href="references.html">[4]</a>. DOM allows programs to dynamically change the web page's content <a href="references.html">[5]</a>. DOM-based XSS exploits this by passing a malicious payload through what is referred to as the 'source' to a vulnerable function called a 'sink', which allows execution of the payload<a href="references.html">[4]</a>. You can read about common sinks <a href="https://portswigger.net/web-security/dom-based#:~:text=A%20sink%20is%20a%20potentially,an%20HTML%20sink%20is%20document">here</a>. To give an example, imagine a website, which displays the value you have searched for at the top of the page when you press a button. This search input would be the source; the function that takes the input and displays it without the proper precaution is the sink, and the payload will then execute on the browser.
+              Both reflected and stored XSS rely on the server passing some payload to the browser; in the case of reflected, it is immediately reflected from the URL, while stored, it is fetched from some persistent location. On the other hand, DOM-based XSS does not rely on the payload passing through the server at all<a href="references.html">[4]</a>. Instead, DOM-based XSS uses the Javascript Document Object Model<a href="references.html">[4]</a>. DOM allows programs to dynamically change the web page's content <a href="references.html">[5]</a>. DOM-based XSS exploits this by passing a malicious payload through what is referred to as the 'source' to a vulnerable function called a 'sink', which allows execution of the payload<a href="references.html">[4]</a>. You can read about common sinks <a href="https://portswigger.net/web-security/dom-based#:~:text=A%20sink%20is%20a%20potentially,an%20HTML%20sink%20is%20document">here</a>. To give an example, imagine a website, which displays the value you have searched for at the top of the page when you press a button. This search input would be the source; the function that takes the input and displays it without the proper precaution is the sink, and the payload will then execute on the browser.
             </p>
           </div>
           
@@ -282,21 +282,19 @@
             </div>
             <div class="row">
             
-              <div class="col p-3">
-                <h2 >Example from Lab  </h2>
-              </div>
+            
               
             </div>
             <div class="row">
               <div class="col">
-                <p>This lab which is demonstrated is from <a href="https://portswigger.net/web-security/cross-site-scripting/reflected/lab-html-context-nothing-encoded">PortSwigger</a> </p>
+                <p>This example is from <a href="https://portswigger.net/web-security/cross-site-scripting/reflected/lab-html-context-nothing-encoded">PortSwigger</a> </p>
               </div>
             
           </div>
 
           <div class="row">
             <div class="col">
-              <p>First we navigate to the main page of the website </p>
+              <p>First we navigate to the main page of the website.</p>
             </div>
             <div class="container-fluid ">
               <div class = "row p-3">
@@ -308,7 +306,7 @@
             </div>
             </div>
             <div class="col">
-              <p>Here we can see one input field so we can inspect this further by entering an input. </p>
+              <p>Here we can see one input field so we can inspect this further by entering an input.</p>
             </div>
         </div>
         <div class="row">
@@ -384,7 +382,7 @@
                 </div>
 
 
-                <div class="card text-center" id="answerCard" style="display:none;">
+                <div class="card text-center p-3" id="answerCard" style="display:none;">
                   <div class="card-header">
                       Solution Card
                   </div>
@@ -406,9 +404,9 @@
           </div>
         
      <div class="container text-center">
-      <div class="row">
+      <div class="row p-3">
       <div class="col">
-        <h2 >DOMXSS </h2>
+        <h2 >DOMXSS example</h2>
       </div>
       </div>
       
@@ -420,14 +418,12 @@
           </div>
           <div class="row">
           
-            <div class="col p-3">
-              <h2 >Example from Lab  </h2>
-            </div>
+         
             
           </div>
           <div class="row">
             <div class="col">
-              <p>This lab which is demonstrated is from <a href="https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-document-write-sink"> Portswigger</a></p>
+              <p>This example is from <a href="https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-document-write-sink"> Portswigger</a></p>
             </div>
           
         </div>
@@ -518,7 +514,7 @@
     <div class ="row">
       <div class="col">
         <h2>Stored XSS example</h2>
-        <p>This lab which is demonstrated is from <a href="https://portswigger.net/web-security/cross-site-scripting/stored/lab-html-context-nothing-encoded"> Portswigger</a></p>
+        <p>This example from <a href="https://portswigger.net/web-security/cross-site-scripting/stored/lab-html-context-nothing-encoded"> Portswigger</a></p>
           
         </div>
       </div>
